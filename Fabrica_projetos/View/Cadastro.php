@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
+    <title>Cadastrar</title>
 
+</head>
 <style>
     body {
         background-color: #031E27;
@@ -64,11 +64,31 @@
 
     }
 
+    .botao {
+        width: 350px;
+        height: 40px;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+    }
 
+    label {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        color: white;
+
+
+    }
 
     .cadastrar {
         transition: transform 0.5s;
-     
+
     }
 
     .cadastrar:hover {
@@ -111,41 +131,9 @@
             transform: scale(1);
         }
     }
-
-    .botao {
-        width: 350px;
-        height: 40px;
-        background-color: black;
-        color: white;
-        border: none;
-        border-radius: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 15px;
-    }
-    .botao:hover{
-       transition: transform 0.3s;
-    }
-
-    .botao:hover {
-        animation: pulso 1s infinite;
-        background-color: #002753;
-    }
-    
-
-    label {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        color: white;
-
-
-    }
 </style>
 
 <body>
-
     <nav>
 
         <div class="logo">
@@ -154,25 +142,36 @@
 
     </nav>
 
-    <main>
-        <div class="conteudo">
-            <h2>Seja bem vindo</h2>
+
+    <div class="conteudo">
+        <h2>Cadastrar</h2>
+
+        <form action="../Controller/usuarioControle.php" method="POST" class="conteudo">
+            <input type="hidden" name="acao" value="cadastrar">
 
             <div class="campo">
-                <label for="name">E-mail</label>
-                <input type="text" name="email" placeholder="Digite seu Email">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu Email" required>
+
                 <label for="senha">Senha</label>
-                <input type="text" name="senha" placeholder="Digite sua senha">
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+                <label for="confirmar_senha">Confirmar senha</label>
+                <input type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirme sua senha"
+                    required>
+
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" required>
             </div>
-            <a href="recuperar_senha.html">Recupere sua senha clicando aqui</a>
-            <a href="#" class="botao">Acessar</a>
-            <p><a href="Cadastro.html" class="cadastrar">Cadastre-se clicando aqui! </a></p>
 
+            <button type="submit" class="botao">Cadastrar</button>
+        </form>
 
-        </div>
-    </main>
-
-
+        <p><a href="login.php" class="cadastrar">Já possui conta? Faça login clicando aqui</a></p>
+    </div>
 </body>
 
 </html>

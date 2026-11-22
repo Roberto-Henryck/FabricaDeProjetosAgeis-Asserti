@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,7 +70,7 @@
 
     .cadastrar {
         transition: transform 0.5s;
-     
+
     }
 
     .cadastrar:hover {
@@ -124,15 +126,16 @@
         justify-content: center;
         font-size: 15px;
     }
-    .botao:hover{
-       transition: transform 0.3s;
+
+    .botao:hover {
+        transition: transform 0.3s;
     }
 
     .botao:hover {
         animation: pulso 1s infinite;
         background-color: #002753;
     }
-    
+
 
     label {
         display: flex;
@@ -158,17 +161,22 @@
         <div class="conteudo">
             <h2>Seja bem vindo</h2>
 
-            <div class="campo">
-                <label for="name">E-mail</label>
-                <input type="text" name="email" placeholder="Digite seu Email">
-                <label for="senha">Senha</label>
-                <input type="text" name="senha" placeholder="Digite sua senha">
-            </div>
-            <a href="recuperar_senha.html">Recupere sua senha clicando aqui</a>
-            <a href="#" class="botao">Acessar</a>
-            <p><a href="Cadastro.html" class="cadastrar">Cadastre-se clicando aqui! </a></p>
+           <form action="../Controller/usuarioControle.php" method="POST" class="conteudo">
+                <input type="hidden" name="acao" value="login">
 
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu Email" required>
 
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                </div>
+
+                <a href="recuperar_senha.php">Recupere sua senha clicando aqui</a>
+                <button type="submit" class="botao">Acessar</button>
+            </form>
+
+            <p><a href="Cadastro.php" class="cadastrar">Cadastre-se clicando aqui!</a></p>
         </div>
     </main>
 
