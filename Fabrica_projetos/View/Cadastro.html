@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+
+</head>
+<style>
+    body {
+        background-color: #031E27;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .conteudo {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        gap: 30px;
+        align-items: center;
+    }
+
+    h2 {
+        display: flex;
+        color: white;
+        font-size: 30px;
+
+
+    }
+
+    input {
+        width: 300px;
+        border-radius: 20px;
+        align-items: center;
+        display: flex;
+        padding: 10px;
+        border: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        display: flex;
+        font-size: 13px;
+
+    }
+
+    p {
+        color: white;
+        font: 10px;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        font-size: 13px;
+
+    }
+
+    .botao {
+        width: 350px;
+        height: 40px;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        color: white;
+
+
+    }
+
+    .cadastrar {
+        transition: transform 0.5s;
+
+    }
+
+    .cadastrar:hover {
+        animation: pulso 1s infinite;
+    }
+
+    @keyframes pulso {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+
+    }
+
+    .pulsar {
+        transition: transform 0.5s;
+    }
+
+    .pulsar:hover {
+        animation: pulso 1s infinite;
+    }
+
+    @keyframes pulso {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+</style>
+
+<body>
+    <nav>
+
+        <div class="logo">
+            <img src="../IMG/Logo.png" alt="" width="300px">
+        </div>
+
+    </nav>
+
+
+    <div class="conteudo">
+        <h2>Cadastrar</h2>
+
+        <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" placeholder="Digite seu nome">
+            <label for="name">E-mail</label>
+            <input type="text" name="email" placeholder="Digite seu Email">
+            <label for="senha">Senha</label>
+            <input type="text" name="senha" placeholder="Digite sua senha">
+            <label for="senha2">Confirmar senha</label>
+            <input type="text" name="senha" placeholder="Confirme sua senha">
+            <label for="telefone">Telefone</label>
+            <input type="int" name="senha" placeholder="Digite seu telefone">
+
+        </div>
+        <a href="#" class="botao">Acessar</a>
+        <p><a href="Login.html" class="cadastrar">Já possui conta? faça login clicando aqui</a></p>
+    </div>
+</body>
+
+</html>
