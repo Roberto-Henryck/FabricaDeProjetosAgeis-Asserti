@@ -95,3 +95,24 @@ if ($acao === 'redefinir_senha' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     exit;
 }
+
+// 6. REGISTRAR CONTEÚDO CONCLUÍDO
+if ($acao === 'registrar_conclusao' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_SESSION['usuario_id'])) {
+        header('Location: ../View/login.php');
+        exit;
+    }
+
+    $usuarioId = $_SESSION['usuario_id'];
+    $conteudo = trim($_POST['conteudo'] ?? '');
+    $categoria = trim($_POST['categoria'] ?? '');
+    $dataConclusao = $_POST['data_conclusao'] ?? date('Y-m-d');
+    $observacoes = trim($_POST['observacoes'] ?? '');
+
+    if ($usuarioModel->registrarConclusao($usuarioId, $conteudo, $categoria, $dataConclusao, $observacoes)) {
+        echo "<script>alert('Conteúdo registrado como concluído!'); window.location.href='../View/progresso.php';</script>";
+    } else {
+        echo "<script>alert('Erro ao registrar conclusão.'); history.back();</script>";
+    }
+    exit;
+}

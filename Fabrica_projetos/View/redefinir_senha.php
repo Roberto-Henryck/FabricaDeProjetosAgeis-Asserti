@@ -5,7 +5,7 @@ $token = $_GET['token'] ?? '';
 $usuarioModel = new Usuario();
 $usuario = !empty($token) ? $usuarioModel->buscarPorToken($token) : false;
 
-// Bloqueia o acesso se não houver token na URL ou se ele já expirou / foi usado
+
 if (!$usuario) {
     echo "<script>alert('Acesso negado: link inválido ou expirado.'); window.location.href='login.php';</script>";
     exit;

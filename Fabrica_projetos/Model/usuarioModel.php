@@ -74,4 +74,30 @@ class Usuario {
 
         return $stmt->execute();
     }
-}
+
+
+    // Salva um conteúdo concluído pelo usuário
+  // Salva um conteúdo concluído pelo usuário
+    public function registrarConclusao($usuarioId, $conteudo, $categoria, $dataConclusao, $observacoes) {
+        $sql = "INSERT INTO progresso_conteudos (usuario_id, conteudo, categoria, data_conclusao, observacoes)
+                VALUES (:usuario_id, :conteudo, :categoria, :data_conclusao, :observacoes)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':usuario_id', $usuarioId);
+        $stmt->bindValue(':conteudo', $conteudo);
+        $stmt->bindValue(':categoria', $categoria);
+        $stmt->bindValue(':data_conclusao', $dataConclusao);
+        $stmt->bindValue(':observacoes', $observacoes);
+
+        return $stmt->execute();
+    }
+
+    // Lista os conteúdos concluídos pelo usuário
+    public function listarConclusoes($usuarioId) {
+        $sql = "SELECT * FROM progresso_conteudos WHERE usuario_id = :usuario_id ORDER BY data_conclusao DESC, id DESC";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':usuario_id', $usuarioId);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    }

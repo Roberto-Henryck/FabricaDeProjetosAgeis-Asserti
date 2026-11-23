@@ -124,7 +124,7 @@
             formData.append('acao', 'solicitar_recuperacao');
 
             try {
-                // 1. Pede ao Controller para validar o e-mail no banco e gerar o link com token
+            
                 const resposta = await fetch('../Controller/usuarioControle.php', {
                     method: 'POST',
                     body: formData
@@ -137,7 +137,7 @@
                     return;
                 }
 
-                // 2. Dispara o e-mail pelo EmailJS enviando o link gerado
+              
                 status.textContent = "Enviando e-mail...";
                 await emailjs.send('service_3prpein', 'template_l0todu6', {
                     user_email: formData.get('user_email'),
